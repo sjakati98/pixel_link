@@ -48,13 +48,21 @@ synthtext = DatasetConfig(
     }
 )
 
+maptext = DatasetConfig(
+    file_pattern = 'maps_%s.tfrecord',
+    split_sizes = {
+        'train': 2863
+    }
+)
+
 datasets_map = {
     'icdar2013':icdar2013,
     'icdar2015':icdar2015,
     'scut':scut,
     'td500':td500,
     'tr400':tr400,
-    'synthtext':synthtext
+    'synthtext':synthtext,
+    'maptext': maptext,
 }
 
 

@@ -18,8 +18,8 @@ BATCH_SIZE=`expr $NUM_GPUS \* $IMG_PER_GPU`
 #DATASET=synthtext
 #DATASET_PATH=SynthText
 
-DATASET=icdar2015
-DATASET_DIR=$HOME/dataset/pixel_link/icdar2015
+DATASET=maptext
+DATASET_DIR=/home/sgkelley/pixel_link/datasets/train_gt
 
 python train_pixel_link.py \
             --train_dir=${TRAIN_DIR} \

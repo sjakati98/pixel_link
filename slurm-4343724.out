@@ -1,0 +1,40 @@
+++ set -e
+++ export CUDA_VISIBLE_DEVICES=1
+++ CUDA_VISIBLE_DEVICES=1
+++ python test_pixel_link_on_any_image.py --checkpoint_path=/home/sgkelley/conv3_3/model.ckpt-38055 --dataset_dir=/mnt/nfs/work1/elm/sgkelley/data/maps --eval_image_width=1280 --eval_image_height=768 --pixel_conf_threshold=0.5 --link_conf_threshold=0.5 --gpu_memory_fraction=-1
+WARNING:tensorflow:From test_pixel_link_on_any_image.py:71: get_or_create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.get_or_create_global_step
+INFO:tensorflow:Restoring parameters from /home/sgkelley/conv3_3/model.ckpt-38055
+~/temp/no-use/images/2018-11-10 16:31:10_1_.png
+~/temp/no-use/images/2018-11-10 16:32:18_2_.png
+~/temp/no-use/images/2018-11-10 16:33:41_3_.png
+~/temp/no-use/images/2018-11-10 16:34:32_4_.png
+~/temp/no-use/images/2018-11-10 16:35:30_5_.png
+~/temp/no-use/images/2018-11-10 16:36:40_6_.png
+~/temp/no-use/images/2018-11-10 16:37:34_7_.png
+~/temp/no-use/images/2018-11-10 16:38:25_8_.png
+~/temp/no-use/images/2018-11-10 16:39:41_9_.png
+~/temp/no-use/images/2018-11-10 16:40:53_10_.png
+~/temp/no-use/images/2018-11-10 16:41:49_11_.png
+~/temp/no-use/images/2018-11-10 16:42:22_12_.png
+~/temp/no-use/images/2018-11-10 16:43:09_13_.png
+~/temp/no-use/images/2018-11-10 16:44:07_14_.png
+~/temp/no-use/images/2018-11-10 16:45:30_15_.png
+~/temp/no-use/images/2018-11-10 16:46:51_16_.png
+~/temp/no-use/images/2018-11-10 16:47:59_17_.png
+~/temp/no-use/images/2018-11-10 16:48:39_18_.png
+~/temp/no-use/images/2018-11-10 16:49:19_19_.png
+~/temp/no-use/images/2018-11-10 16:50:12_20_.png
+Traceback (most recent call last):
+  File "test_pixel_link_on_any_image.py", line 151, in <module>
+    tf.app.run()
+  File "/cm/shared/apps/tensorflow/1.5.0/lib/python2.7/site-packages/tensorflow/python/platform/app.py", line 124, in run
+    _sys.exit(main(argv))
+  File "test_pixel_link_on_any_image.py", line 147, in main
+    test()
+  File "test_pixel_link_on_any_image.py", line 112, in test
+    image_data = util.img.imread(file_path)
+  File "/home/sgkelley/pixel_link/pylib/src/util/img.py", line 44, in imread
+    raise IOError('File not found:%s'%(path))
+IOError: File not found:/mnt/nfs/work1/elm/sgkelley/data/maps/angles_-90to90step5
