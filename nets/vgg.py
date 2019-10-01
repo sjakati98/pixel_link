@@ -73,7 +73,11 @@ SMOOTHED_SSC_DILATED = 'smooth_SSC'
 # y = conv2d(x, 64, [3, 3], scope='conv1/conv1_3')
 
 
+<<<<<<< HEAD
 def basenet_with_smoothed_dilated_conv2d_SSC(inputs, fatness=64, dilation=True):
+=======
+def basenet_with_smoothed_dilated_conv2d_SSC():
+>>>>>>> 84d4913a42773e518c3dcadea9cd8eec5237a4ce
     """
     backbone net of vgg16 with added shared seperable smooth dilation layers
     """
@@ -87,7 +91,10 @@ def basenet_with_smoothed_dilated_conv2d_SSC(inputs, fatness=64, dilation=True):
     with slim.arg_scope([slim.conv2d, slim.max_pool2d], padding='SAME'):
         # Block1
         # net = slim.repeat(inputs, 2, slim.conv2d, fatness, [3, 3], scope='conv1')
+<<<<<<< HEAD
 
+=======
+>>>>>>> 84d4913a42773e518c3dcadea9cd8eec5237a4ce
         net = dilated._dilated_conv2d(SMOOTHED_SSC_DILATED, inputs, 3, num_o, 3, 'conv1')
         net = dilated._dilated_conv2d(SMOOTHED_SSC_DILATED, net, 3, num_o, 3, 'conv1')
         end_points['conv1_2'] = net
