@@ -87,7 +87,6 @@ def basenet_with_smoothed_dilated_conv2d_SSC(inputs, fatness=64, dilation=True):
     with slim.arg_scope([slim.conv2d, slim.max_pool2d], padding='SAME'):
         # Block1
         # net = slim.repeat(inputs, 2, slim.conv2d, fatness, [3, 3], scope='conv1')
-
         net = dilated._dilated_conv2d(SMOOTHED_SSC_DILATED, inputs, 3, num_o, 3, 'conv1')
         net = dilated._dilated_conv2d(SMOOTHED_SSC_DILATED, net, 3, num_o, 3, 'conv1')
         end_points['conv1_2'] = net
