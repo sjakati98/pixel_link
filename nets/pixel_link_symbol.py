@@ -30,8 +30,11 @@ class PixelLinkNet(object):
                 with slim.arg_scope([slim.conv2d, slim.max_pool2d],
                                     padding='SAME') as sc:
                     self.arg_scope = sc
-                    self.net, self.end_points = vgg.basenet(
-                              inputs =  self.inputs)
+                    # self.net, self.end_points = vgg.basenet(
+                    #           inputs =  self.inputs)
+                    self.net, self.end_points = vgg.basenet_with_dilated_convolutions(
+                        inputs=self.inputs
+                    )
                     
         elif config.model_type == MODEL_TYPE_vgg16_no_dilation:
             from nets import vgg
@@ -43,7 +46,9 @@ class PixelLinkNet(object):
                 with slim.arg_scope([slim.conv2d, slim.max_pool2d],
                                     padding='SAME') as sc:
                     self.arg_scope = sc
-                    self.net, self.end_points = vgg.basenet(
+                    # self.net, self.end_points = vgg.basenet(
+                    #           inputs =  self.inputs, dilation = False)
+                    self.net, self.end_points = vgg.basenet_with_dilated_convolutions(
                               inputs =  self.inputs, dilation = False)
         else:
             raise ValueError('model_type not supported:%s'%(config.model_type))
