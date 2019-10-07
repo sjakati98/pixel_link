@@ -32,7 +32,7 @@ class PixelLinkNet(object):
                     self.arg_scope = sc
                     # self.net, self.end_points = vgg.basenet(
                     #           inputs =  self.inputs)
-                    self.net, self.end_points = vgg.basenet_with_smoothed_dilated_conv2d_SSC(
+                    self.net, self.end_points = vgg.basenet_with_dilated_convolutions(
                         inputs=self.inputs
                     )
                     
@@ -48,7 +48,7 @@ class PixelLinkNet(object):
                     self.arg_scope = sc
                     # self.net, self.end_points = vgg.basenet(
                     #           inputs =  self.inputs, dilation = False)
-                    self.net, self.end_points = vgg.basenet_with_smoothed_dilated_conv2d_SSC(
+                    self.net, self.end_points = vgg.basenet_with_dilated_convolutions(
                               inputs =  self.inputs, dilation = False)
         else:
             raise ValueError('model_type not supported:%s'%(config.model_type))
